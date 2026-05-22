@@ -18,7 +18,8 @@ public class JwtUtil {
     private Long expiration;
 
     private Key getSigningKey() {
-        return Keys.hmacShaKeyFor(secret.getBytes());
+        String key = "serversync_secret_key_2024_this_is_a_very_long_secure_key_for_jwt_token";
+        return Keys.hmacShaKeyFor(key.getBytes());
     }
 
     public String generateToken(String username) {
